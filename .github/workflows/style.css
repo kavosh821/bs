@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css?family=Spectral:400,400i,600,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
+
+/*CSS VARIABLES*/
+:root {
+/*COLOURS*/
+--fore: #000066;
+--comp-fore: #45427C; /*this is supposed to be a .7 transparency of fore but the rgba wasn't working and I don't know how to show it w/ hex*/
+--mid: #085fa6;
+--back:#e6fafc;
+--text: #0e0918;
+--accent:#d809a6;
+
+/*FONTS*/
+--serif:'Spectral', garamond, serif;
+--sans:'Roboto', helvetica, sans-serif;
+}
+
+body {
+  background-color: var(--back);
+  color: var(--text);
+  font-size: 1em;
+  font-weight: normal;
+  font-style: normal;
+  font-family: var(--sans);
+  line-height: 1.5em;
+  text-align: justify;
+}
+
+/*******************************
+TYPE DEFINITIONS
+*******************************/
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--serif);
+  margin: 1rem 0;
+  padding-bottom: none;
+  padding-top: 1em;
+}
+h4, h5, h6 {
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.2em;
+}
+h1, h4 {color: var(--fore);}
+h2, h5 {color: var(--comp-fore);}
+h3, h6 {color: var(--mid);}
+  
+
+h1 {
+  font-weight: 700;
+  color: var(--fore);
+  font-size: 2em;
+  padding-top: 1em;
+  margin-left: none;
+  text-align: center;
+}
+
+h2 {
+  font-weight: 600;
+  color: var(--comp-fore);
+  font-size: 1.8em;
+}
+
+h3 {
+  font-weight: 400;
+  color: var(--mid);
+  font-size: 1.5em;
+}
+
+p {
+  margin: 1em 0;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+figcaption { /*Was trying to get the figure caption to be left aligned with the images, specifically with image in Characters section*/
+  font-family: var(--serif);
+  margin: inherit;
+}
+
+cite {
+  font-family: var(--serif);
+  }
+
+ol > li {
+  margin-left: 2em;
+}
+
+a {
+  text-decoration: none;
+}
+
+p a {
+  color: var(--accent);
+}
+strong {
+  font-weight: 500;
+  letter-spacing: .1em;
+}
+
+em {
+  font-style: italic;
+}
+
+
+blockquote {
+  font-style: italic; 
+  max-width: 80%;
+  text-align: justify;
+  margin: 0 auto;
+}
+blockquote > cite {
+font-family: var(--serif);
+font-style: italic;
+}
+
+/*******************************
+GENERIC CLASSES
+*******************************/
+.container-topbar .container-bottombar{
+  max-width: 100%;
+}
+.container-main{
+  max-width: 800px;
+  margin: auto;
+}
+
+
+/*Header - topbar*/
+.container-topbar li {
+  display: inline-block;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-top: 1em;
+  max-width: 100%;
+  text-align: center; 
+}
+.container-topbar a {
+  color: var(--back);
+}
+.container-topbar a:hover {
+  background-color: var(--mid);
+  text-align: center;
+}
+
+/*was trying to get search bar in top right corner*/
+.in-the-corner {
+  display: inline-block;
+  padding-left: 1.5em;
+  padding-top: 1em;
+}
+.in-the-corner label {
+  color: var(--back);
+}
+
+/*share icons under first image, not sure how to center them to the page/under the main image, or how to resize properly (they're both different sizes)*/
+.inline-icons li {
+  display: inline-block; 
+  margin: 0 auto;
+  /*text-align: center; added this from one of the suggestions but it doesn't seem to work since it's not text.*/
+}
+.inline-icons img:nth-child(1) {
+  max-width:20%;
+}
+.inline-icons img:nth-child(2) {
+  max-width: 30%;
+}
+.inline-icons a {
+  margin: auto;
+}
+
+
+/*Footer*/
+.container-bottombar {
+  padding-left: 1em;
+  padding-top: 1em;
+}
+.container-bottombar li {
+text-decoration: none;
+padding: .5em;
+}
+.container-bottombar a {
+  color: var(--back);
+}
+.container-bottombar a:hover {
+  color: var(--mid);
+}
+
+/*subscribe*/
+.subscribe {
+  display: inline-block;
+  padding-left: 1.5em;
+  padding-top: 1em;
+}
+.subscribe label {
+  color: var(--back);
+}
+
+.footer-icons li {
+display: inline-block;
+padding-left: 1.5em;
+padding-top: 1em;
+}
+.footer-icons img {
+  max-width: 25%;
+  margin-left: 0;
+}
+
+.logo-copyright {
+  display: inline-block;
+  color: var(--back);
+  padding-left: 1.5em;
+  padding-bottom: 2em;
+}
+.logo-copyright img {
+  max-width: 40%;
+  margin-left: 0;
+}
+
+/*was trying to get the comment box under the label*/
+.comment { 
+  padding-bottom: 1em;
+ /* display: block;*/
+}
+.comment h2 {
+  border-top: .125em solid var(--fore);
+}
+.comment textarea {
+  min-width: 50%;
+  max-width: 100%;
+  min-height: 25%;
+}
+.comment button {
+  display: inline-block;
+}
+
+/*.box-right {   
+  /*was trying to have navigation on the left and icons on the right, read online about columns and flexboxes and floats but couldn't figure it out
+  align-self: right; 
+} 
+*/
+.container-center {
+max-width: 800px;
+}
+/*.box-left {
+  float: left;
+}
+.box-right {
+float: right;
+}
+*/
+
+
+/*******************************
+SPECIFIC CLASSES
+*******************************/
+.site-head {
+  background-color: var(--fore);
+}
+
+.site-main {
+  background-color: var(--back);
+}
+
+.site-footer {
+  background-color: var(--fore);
+  max-width: 100%;
+}
+
